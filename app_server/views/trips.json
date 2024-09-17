@@ -1,0 +1,20 @@
+{
+    "trips": [
+      {
+        "title": "Gale Reef",
+        "description": "A beautiful coral reef to explore.",
+        "image": "/images/reef1.jpg"
+      },
+      {
+        "title": "Dawson’s Reef",
+        "description": "Experience the serenity of Dawson’s Reef.",
+        "image": "/images/reef2.jpg"
+      },
+      {
+        "title": "Claire’s Reef",
+        "description": "An unforgettable underwater adventure.",
+        "image": "/images/reef3.jpg"
+      }
+    ]
+  }
+  
