@@ -1,27 +1,26 @@
-const express = require('express');
-const path = require('path');
-const { engine } = require('express-handlebars'); // Import the engine from express-handlebars
-const app = express();
+var express = require('express');
+var path = require('path');
+var hbs = require('hbs');  // Handlebars view engine
 
-// Set Handlebars as the view engine
-app.engine('hbs', engine({ extname: '.hbs' })); // Using the `engine` method for v8
-app.set('view engine', 'hbs');
+var app = express();
+
+// Set up Handlebars as the view engine
 app.set('views', path.join(__dirname, 'app_server', 'views'));
+app.set('view engine', 'hbs');
 
-// Set static folder
+// Register the partials directory
+hbs.registerPartials(path.join(__dirname, 'app_server', 'views', 'partials'));
+
+// Middleware to serve static files (CSS, images, etc.)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Import routes
-const travelRoutes = require('./app_server/routes/travel');
+// Use the routes defined in the routes/index.js file
+var indexRouter = require('./app_server/routes/index');
+app.use('/', indexRouter);
 
-// Serve the routes
-app.use('/', travelRoutes);
-
-// Serve the HTML file for the root route
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// Start the server on port 3000
+app.listen(3000, function () {
+    console.log('Server is running on http://localhost:3000');
 });
 
-// Start the server
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = app;
