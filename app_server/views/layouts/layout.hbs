@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+    <div id="background">
+        <div id="page">
+            <!-- Use header partial once in the layout -->
+            {{> header }}
+
+            <!-- This is where the individual page contents will be injected -->
+            {{{body}}}
+
+        </div>
+
+        <!-- Use footer partial -->
+        {{> footer }}
+    </div>
+</body>
+</html>
