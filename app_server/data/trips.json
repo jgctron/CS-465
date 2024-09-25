@@ -1,0 +1,34 @@
+{
+  "trips": [
+    {
+      "code": "GR123",
+      "name": "Gale Reef",
+      "length": "7 days",
+      "start": "2024-10-15",
+      "resort": "Coral Sands Resort",
+      "perPerson": "$2,000",
+      "image": "/images/reef1.jpg",
+      "description": "A beautiful coral reef to explore."
+    },
+    {
+      "code": "DR234",
+      "name": "Dawson’s Reef",
+      "length": "5 days",
+      "start": "2024-11-01",
+      "resort": "Oceanview Resort",
+      "perPerson": "$1,800",
+      "image": "/images/reef2.jpg",
+      "description": "Experience the serenity of Dawson’s Reef."
+    },
+    {
+      "code": "CR345",
+      "name": "Claire’s Reef",
+      "length": "6 days",
+      "start": "2024-12-10",
+      "resort": "Blue Lagoon Resort",
+      "perPerson": "$2,500",
+      "image": "/images/reef3.jpg",
+      "description": "An unforgettable underwater adventure."
+    }
+  ]
+}
