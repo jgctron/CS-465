@@ -1,18 +1,12 @@
-const fs = require('fs');
-const path = require('path');
+const Trip = require('../models/trips');
 
-// Controller function to read trip data from trips.json
-module.exports.getTrips = (req, res) => {
-  const tripsFilePath = path.join(__dirname, '../../data/trips.json');
-  
-  // Read the trips.json file
-  fs.readFile(tripsFilePath, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading trips.json:', err);
-      return res.status(500).send('Server Error');
-    }
-    
-    const tripsData = JSON.parse(data);  // Parse JSON data from file
-    res.render('travel', { trips: tripsData.trips });  // Render the view with trips data
-  });
+module.exports.getTrips = async (req, res) => {
+  try {
+    const trips = await Trip.find();  // Fetch trips from the database
+    console.log("Trips fetched from the database: ", trips); // Add this line
+    res.render('travel', { trips });
+  } catch (err) {
+    console.error('Error fetching trips:', err);
+    res.status(500).send('Server Error');
+  }
 };
