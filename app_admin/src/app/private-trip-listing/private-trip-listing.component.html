@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>Welcome User , please register then login for admin access</h2>
+    <div class="row">
+      <div class="col-md-4 mb-3" *ngFor="let trip of trips">
+        <div class="card" style="width: 18rem;">
+          <img [src]="'assets/images/' + trip.image" alt="{{ trip.name }}" class="card-img-top">
+  
+          <div class="card-body">
+            <h5 class="card-title">{{ trip.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ trip.resort }}</h6>
+            <p class="card-text">{{ trip.length }} days - {{ +trip.perPerson | currency }}</p>
+            <p class="card-text">{{ trip.description }}</p>
+            <!-- No edit or delete buttons on this private page -->
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Buttons for Login and Register -->
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <button class="btn btn-primary" (click)="navigateToLogin()">Login</button>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-secondary" (click)="navigateToRegister()">Register</button> <!-- Add the Register button -->
+      </div>
+    </div>
+  </div>
+  
