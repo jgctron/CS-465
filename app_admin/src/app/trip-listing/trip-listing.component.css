@@ -1,0 +1,27 @@
+.card {
+    margin-bottom: 20px;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-header {
+    font-weight: bold;
+    background-color: #f8f9fa;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .card-subtitle {
+    font-size: 0.9em;
+  }
+  
+  .card-text {
+    font-size: 0.85em;
+    color: #6c757d;
+  }
+  
