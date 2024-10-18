@@ -1,0 +1,47 @@
+<div class="container mt-4">
+  <h2>Add New Trip</h2>
+
+  <form (ngSubmit)="onSubmit(tripForm)" #tripForm="ngForm">  <!-- Pass tripForm reference here -->
+    <div class="form-group">
+      <label for="code">Trip Code</label>
+      <input type="text" id="code" class="form-control" [(ngModel)]="newTrip.code" name="code" required />
+    </div>
+
+    <div class="form-group">
+      <label for="name">Trip Name</label>
+      <input type="text" id="name" class="form-control" [(ngModel)]="newTrip.name" name="name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="resort">Resort</label>
+      <input type="text" id="resort" class="form-control" [(ngModel)]="newTrip.resort" name="resort" required />
+    </div>
+
+    <div class="form-group">
+      <label for="length">Length (days)</label>
+      <input type="number" id="length" class="form-control" [(ngModel)]="newTrip.length" name="length" required />
+    </div>
+
+    <div class="form-group">
+      <label for="perPerson">Cost per Person</label>
+      <input type="number" id="perPerson" class="form-control" [(ngModel)]="newTrip.perPerson" name="perPerson" required />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" class="form-control" [(ngModel)]="newTrip.description" name="description" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image URL</label>
+      <input type="text" id="image" class="form-control" [(ngModel)]="newTrip.image" name="image" required />
+    </div>
+
+    <div class="form-group">
+      <label for="start">Start Date</label>
+      <input type="date" id="start" class="form-control" [(ngModel)]="newTrip.start" name="start" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="!tripForm.form.valid">Add Trip</button>
+  </form>
+</div>
