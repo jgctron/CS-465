@@ -1,0 +1,43 @@
+<div class="container mt-4">
+    <h2>Edit Trip</h2>
+  
+    <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
+      <div class="form-group">
+        <label for="name">Trip Name</label>
+        <input type="text" id="name" class="form-control" formControlName="name" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="resort">Resort</label>
+        <input type="text" id="resort" class="form-control" formControlName="resort" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="length">Length (days)</label>
+        <input type="number" id="length" class="form-control" formControlName="length" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="perPerson">Cost per Person</label>
+        <input type="number" id="perPerson" class="form-control" formControlName="perPerson" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" class="form-control" formControlName="description" required></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="image">Image URL</label>
+        <input type="text" id="image" class="form-control" formControlName="image" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="start">Start Date</label>
+        <input type="date" id="start" class="form-control" formControlName="start" required />
+      </div>
+  
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="!editForm.valid">Update Trip</button>
+    </form>
+  </div>
+  
