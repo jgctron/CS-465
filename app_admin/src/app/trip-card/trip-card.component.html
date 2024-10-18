@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let trip of trips">
+      <div class="card" style="width: 18rem;">
+        <img [src]="'assets/images/' + trip.image" alt="{{ trip.name }}" class="card-img-top">
+
+        <div class="card-body">
+          <h5 class="card-title">{{ trip.name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ trip.resort }}</h6>
+          <p class="card-text">{{ trip.length }} days - {{ +trip.perPerson | currency }}</p>
+          <p class="card-text">{{ trip.description }}</p>
+          <button class="btn btn-danger" *ngIf="trip._id" (click)="deleteTrip(trip._id)">Delete</button>
+          <button class="btn btn-secondary mt-2" (click)="editTrip(trip)">Edit Trip</button> <!-- New Edit button -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add this row for the Add Trip button -->
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <button class="btn btn-primary" (click)="navigateToAddTrip()">Add Trip</button>
+    </div>
+  </div>
+</div>
